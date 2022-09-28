@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayoutNight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:backgroundTint="#570861"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/dateTimeRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:backgroundTint="#570861"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    <TextClock
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:layout_marginRight="5sp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:format12Hour="h:mm:ssa"
+        android:padding="1sp"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textColor="#FFFF00"
+        android:textSize="150sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_column="1"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill"
+        app:layout_row="0"
+        app:layout_rowWeight="1" />
+
+    <TextClock
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7sp"
+        android:layout_marginLeft="10sp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:format12Hour="EE MMM d yyyy"
+        android:padding="2sp"
+        android:text="Date"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        android:textAlignment="center"
+        android:textColor="#FFFF00"
+        android:textSize="30sp"
+        app:layout_column="0"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill"
+        app:layout_row="0"
+        app:layout_rowWeight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:backgroundTint="#570861"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateTimeRow">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:backgroundTint="#570861"
+            app:layout_constrainedHeight="true" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

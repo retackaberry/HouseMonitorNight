@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:backgroundTint="#570861"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/dateTimeRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_rowWeight="1"
+        app:rowCount="1">
+
+        <TextClock
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7sp"
+            android:layout_marginLeft="10sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:format12Hour="EE MMM dd yyyy"
+            android:padding="2sp"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="60sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextClock
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7sp"
+            android:layout_marginRight="10sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:format12Hour="h:mm:ssa"
+            android:padding="2sp"
+            android:text="Time"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="60sp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/tempLabel"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10sp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:padding="5sp"
+        android:text="House Temps"
+        android:textAlignment="center"
+        android:textColor="#FFFF00"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/dateTimeRow"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="@id/dateTimeRow"
+        app:layout_constraintTop_toBottomOf="@id/dateTimeRow"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_rowWeight="1" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/tempLabelRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:columnCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tempLabel"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/tempLabel"
+        app:layout_constraintTop_toBottomOf="@id/tempLabel"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_rowWeight="1"
+        app:rowCount="1">
+
+        <TextView
+            android:id="@+id/frTempLabel"
+            android:onClick="frTempLabelOnClick"
+            android:clickable="true"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="Family"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/offTempLabel"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="Office"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/brTempLabel"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="Bedroom"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/entTempLabel"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="Entry"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/tempRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:columnCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tempLabel"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/tempLabel"
+        app:layout_constraintTop_toBottomOf="@id/tempLabelRow"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_rowWeight="1"
+        app:rowCount="1">
+
+        <TextView
+            android:id="@+id/frTemp"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="0 °C"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/offTemp"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="0 °C"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/brTemp"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="0 °C"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/entTemp"
+            android:layout_margin="2sp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:padding="5sp"
+            android:text="0 °C"
+            android:textAlignment="center"
+            android:textColor="#FFFF00"
+            android:textSize="36sp"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:backgroundTint="#570861"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tempRow"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="354dp">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:backgroundTint="#570861"
+            app:layout_constrainedHeight="true" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
